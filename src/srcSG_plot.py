@@ -126,7 +126,7 @@ def plot_SG_full(x0,x_vg,x_nf,x_Vegas_MC,x_resample_ini,x_resample_vg,x_FuHsi):
     plt.subplot(3, 3, 3)
     plt.hist2d(x_nf[:, 0].numpy(), x_nf[:, 1].numpy(), bins=50, range=[[-5, 5], [-5, 5]], cmap='viridis')
     plt.colorbar()
-    plt.title('Sampling (FuHsi grid)')   
+    plt.title('Sampling (SG grid)')   
     
     
     plt.subplot(3, 3, 4)
@@ -158,7 +158,7 @@ def plot_SG_full(x0,x_vg,x_nf,x_Vegas_MC,x_resample_ini,x_resample_vg,x_FuHsi):
     plt.subplot(3, 3, 6+3)
     plt.hist2d(x_FuHsi[:, 0].numpy(), x_FuHsi[:, 1].numpy(), bins=50, range=[[-5, 5], [-5, 5]], cmap='viridis')
     plt.colorbar()
-    plt.title('ReSampling (FuHsi grid)')
+    plt.title('ReSampling (SG grid)')
     
     #plt.subplot(1, 3, 3)
     #plt.plot(I_MC.numpy(), marker='o', lw=1)
@@ -180,7 +180,7 @@ def plot_SG_full(x0,x_vg,x_nf,x_Vegas_MC,x_resample_ini,x_resample_vg,x_FuHsi):
     plt.subplot(1, 4, 3)
     plt.hist2d(x_nf[:, 0].numpy(), x_nf[:, 1].numpy(), bins=50, range=[[-5, 5], [-5, 5]], cmap='viridis')
     plt.colorbar()
-    plt.title('Sampling (FuHsi grid)')   
+    plt.title('Sampling (SG grid)')   
     
     
     mask_a = (x_vg[:, 0] > 1.5) & (x_vg[:, 1] > 1.5) & (x_vg[:, 1] < 2.2) &  (x_vg[:, 0] < 2.2)
@@ -225,12 +225,12 @@ def plot_SG_full(x0,x_vg,x_nf,x_Vegas_MC,x_resample_ini,x_resample_vg,x_FuHsi):
     plt.colorbar()
     plt.scatter(x_nf_cuta[1:10,0].numpy(),x_nf_cuta[1:10,1].numpy(), c='red',marker='.',edgecolors='red',alpha=0.8)
     plt.scatter(x_nf_cutb[1:10,0].numpy(),x_nf_cutb[1:10,1].numpy(), c='blue',marker='.',edgecolors='blue',alpha=0.8)
-    plt.title('Sampling (FuHsi grid)')
+    plt.title('Sampling (SG grid)')
     
     plt.subplot(1, 4, 4)
     plt.hist2d(x_FuHsi[:, 0].numpy(), x_FuHsi[:, 1].numpy(), bins=50, range=[[-5, 5], [-5, 5]], cmap='viridis')
     plt.colorbar()
-    plt.title('ReSampling (FuHsi grid)')
+    plt.title('ReSampling (SG grid)')
     
     #plt.subplot(1, 3, 3)
     #plt.plot(I_MC.numpy(), marker='o', lw=1)
@@ -254,7 +254,8 @@ def plot_SG_full(x0,x_vg,x_nf,x_Vegas_MC,x_resample_ini,x_resample_vg,x_FuHsi):
     X,Y,Z=two2threeD(x,y,-0.2,1.2) 
     ax.plot_surface(X, Y, Z, cmap='viridis', linewidth=0, antialiased=True)
     #ax.set_xlim(*xlim1)
-    ax.set_zlim(*(0,800))
+    #ax.set_zlim(*(0,800))
+    ax.set_zlim(*(0,1600))
     ax.view_init(elev=45, azim=135)
     #ax.set_xlabel(r'$x_1$')
     #ax.set_ylabel(r'$x_2$')
