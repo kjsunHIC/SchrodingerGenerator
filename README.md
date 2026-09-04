@@ -538,21 +538,7 @@ If you use Schrödinger Generator in your research, please cite the associated p
 }
 ```
 
-Please replace the placeholders with the final publication information.
 
----
-
-## License
-
-The repository should include a `LICENSE` file specifying the terms under which the code is distributed.
-
-For example, if the project is released under the MIT License, add the standard MIT license text to:
-
-```text
-LICENSE
-```
-
----
 
 ## Acknowledgements
 
